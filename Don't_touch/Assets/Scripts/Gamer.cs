@@ -21,6 +21,7 @@ public class Gamer : MonoBehaviour
             GameObject bombalar = Instantiate(bomb ,bombSpawn.transform.position, bombSpawn.transform.rotation);
             Rigidbody2D rg = bombalar.GetComponent<Rigidbody2D>();
             rg.AddForce(new Vector2(2f, 0f) * 8f, ForceMode2D.Impulse);
+                     
             
             
         
