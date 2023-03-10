@@ -18,13 +18,13 @@ public class Gamer : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space)) 
         {
-            GameObject bombalar = Instantiate(bomb ,bombSpawn.transform.position, bombSpawn.transform.rotation);
-            Rigidbody2D rg = bombalar.GetComponent<Rigidbody2D>();
-            rg.AddForce(new Vector2(2f, 0f) * 8f, ForceMode2D.Impulse);
-                     
-            
-            
-        
+            GameObject bombs = Instantiate(bomb ,bombSpawn.transform.position, bombSpawn.transform.rotation);// create the bombs
+            Rigidbody2D rg = bombs.GetComponent<Rigidbody2D>();
+            rg.AddForce(new Vector2(2f, 0f) * 8f, ForceMode2D.Impulse); // apply force to bombs
+
+
+
+
         }
         
     }
