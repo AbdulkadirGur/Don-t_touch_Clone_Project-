@@ -26,7 +26,7 @@ public class midboxScript : MonoBehaviour
         if (health <= 0)
         {
 
-            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(1,gameObject);
+            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(1 ,gameObject);
             Destroy(gameObject); 
         }
         else
