@@ -20,10 +20,28 @@ public class bombScript : MonoBehaviour
         {
             collision.gameObject.GetComponent<midboxScript>().Damage(power); // Damage the boxes  .
 
-            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(0,collision.gameObject);
+            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(0,collision.gameObject);// Effect
 
-            
-            Destroy(gameObject,5f );
+
+            Destroy(gameObject);
+            //GetComponent<CircleCollider2D>().isTrigger = false; // 
+        }
+        if (collision.gameObject.CompareTag("Gamer2Tag"))
+        {
+            gamemanager.GetComponent<gameManager>().Damage_Manager(0,power); // Damage the Gamer2  .
+
+            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(0, collision.gameObject);// Effect
+
+            Destroy(gameObject);
+            //GetComponent<CircleCollider2D>().isTrigger = false; // 
+        }
+        if (collision.gameObject.CompareTag("Gamer1Tag"))
+        {
+            gamemanager.GetComponent<gameManager>().Damage_Manager(1, power);// Damage the Gamer1  .
+
+            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(0, collision.gameObject); // Effect
+
+            Destroy(gameObject);
             //GetComponent<CircleCollider2D>().isTrigger = false; // 
         }
     }
