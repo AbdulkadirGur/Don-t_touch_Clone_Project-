@@ -9,10 +9,15 @@ public class midboxScript : MonoBehaviour
     public GameObject healthCanvas;
     float health = 100 ;
     public Image healthBar;
-    
 
+    GameObject gamemanager;
 
-   public void Damage(float damageForce)
+    private void Start()
+    {
+        gamemanager = GameObject.FindWithTag("GameManagerTag");
+    }
+
+    public void Damage(float damageForce)
     {
         health -= damageForce;  // Decrease the value of health.
 
@@ -20,11 +25,13 @@ public class midboxScript : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+
+            gamemanager.GetComponent<gameManager>().Create_Sound_and_Effect(1,gameObject);
+            Destroy(gameObject); 
         }
         else
         {
-            StartCoroutine(openHealthBar()); // Open the healthbar after the damage
+            StartCoroutine(openHealthBar()); 
         }     
     }
 
