@@ -9,6 +9,9 @@ TagManager:
   - midboxTag
   - FxTemporaire
   - GameManagerTag
+  - ground
+  - player1
+  - player2
   layers:
   - Default
   - TransparentFX
